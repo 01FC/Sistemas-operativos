@@ -1,0 +1,12 @@
+Threads:
+https://www.tutorialspoint.com/cplusplus/cpp_multithreading.htm
+http://man7.org/linux/man-pages/man3/pthread_create.3.html
+https://www.um.es/earlyadopters/actividades/a3/PCD_Activity3_Session1.pdf
+http://www.chuidiang.org/clinux/procesos/mashilos.php#mutex
+
+Clone:
+https://en.wikipedia.org/wiki/C_data_types
+https://stackoverflow.com/questions/23579354/clone-function-implicit-declaration
+https://stackoverflow.com/questions/10668504/segmentation-fault-c
+http://man7.org/linux/man-pages/man2/clone.2.html
+https://stackoverflow.com/questions/23752264/how-to-use-clone-to-make-parent-process-and-child-process-run-at-the-same-time

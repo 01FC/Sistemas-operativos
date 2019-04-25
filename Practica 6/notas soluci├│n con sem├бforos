@@ -1,0 +1,5 @@
+
+/*
+if pshared == 1:  sem is shared between processes
+else if pshared == o: sem is shared between threads
+*/

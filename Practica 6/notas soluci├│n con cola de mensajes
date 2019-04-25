@@ -1,0 +1,35 @@
+
+ The msgsnd() and msgrcv() system calls are used, respectively,
+ to send messages to, and receive messages from, a message queue.
+
+ The calling process must have write permission on
+ the message queue in order to send a message, and read permission
+ to receive a message.
+
+ int msgsnd(int msqid, const void *msgp, size_t msgsz, int msgflg);
+ ssize_t msgrcv(int msqid, void *msgp, size_t msgsz, long msgtyp, int msgflg);
+
+ struct msgbuf {
+    long mtype;       message type, must be > 0
+    char mtext[1]    message data
+  }
+
+  Por default las funciones son tipo bloqueantes, para definir que son no
+  bloqueantes se añade la bandera: IPC_NOWAIT
+
+  The msgget() system call returns the message queue identifier associated
+  with the value of the key argument.
+
+  In order to use a message queue, it has to be created first. The msgget() system call is used to do just that. This system call accepts two parameters - a queue key, and flags. The key may be one of:
+
+  IPC_PRIVATE - used to create a private message queue.
+a positive integer - used to create (or access) a publicly-accessible message queue.
+The second parameter contains flags that control how the system call is to be processed.
+It may contain flags like IPC_CREAT or IPC_EXCL, which behave similar to O_CREAT and O_EXCL
+in the open() system call, and will be explained later, and it also contains access permission bits.
+The lowest 9 bits of the flags are used to define access permission for the queue, much like similar
+ 9 bits are used to control access to files. the bits are separated into 3 groups - user, group and
+ others. In each set, the first bit refers to read permission, the second bit - to write permission,
+  and the third bit is ignored (no execute permission is relevant to message queues)
+http://www.cs.kent.edu/~ruttan/sysprog/lectures/shmem/msqueues.html
+
